@@ -9,15 +9,48 @@
 import Foundation
 import UIKit
 
+struct Font {
+    var row1: [String]
+    var row2: [String]
+    var row3: [String]
+    
+    var rowNum: [String]
+    var rowCharset1: [String]
+    var rowCharset2: [String]
+    var rowCharset3: [String]
+    var rowCharset4: [String]
+}
+
 struct CustomFont {
     var name: String!
-    var font: UIFont!
+    var fonts: Font!
+    var fontsCL: Font!
     
-    init(name: String, font: UIFont) {
+    init(name: String, font: Font, fontCL: Font) {
         self.name = name
-        self.font = font
+        self.fonts = font
+        self.fontsCL = fontCL
     }
 }
+
+var fonts =
+    [CustomFont(name: "System-Regular",
+                font: Font(row1: ["Ⓠ","Ⓦ","Ⓔ","Ⓡ","Ⓣ","Ⓨ","Ⓤ","Ⓘ","Ⓞ","Ⓟ"],
+                            row2: ["Ⓐ","Ⓢ","Ⓓ","Ⓕ","Ⓖ","Ⓗ","Ⓙ","Ⓚ","Ⓛ"],
+                            row3: ["Ⓩ","Ⓧ","Ⓒ","Ⓥ","Ⓑ","Ⓝ","Ⓜ"],
+                            rowNum: [①②③④⑤⑥⑦⑧⑨ 0],
+                            rowCharset1: [],
+                            rowCharset2: [],
+                            rowCharset3: [],
+                            rowCharset4: []),
+                fontCL: Font(row1: ["Ⓠ","Ⓦ","Ⓔ","Ⓡ","Ⓣ","Ⓨ","Ⓤ","Ⓘ","Ⓞ","Ⓟ"],
+                             row2: ["Ⓐ","Ⓢ","Ⓓ","Ⓕ","Ⓖ","Ⓗ","Ⓙ","Ⓚ","Ⓛ"],
+                             row3: ["Ⓩ","Ⓧ","Ⓒ","Ⓥ","Ⓑ","Ⓝ","Ⓜ"],
+                             rowNum: [],
+                             rowCharset1: [],
+                             rowCharset2: [],
+                             rowCharset3: [],
+                             rowCharset4: [])]
 
 protocol KeyboardViewDelegate: class {
     func nextKeyboardPressed()
@@ -47,9 +80,6 @@ class KeyboardView: BaseViewXib {
     weak var delegate:KeyboardViewDelegate!
     
     private var capsLockOn = true
-    private var fonts = [CustomFont(name: "System-Regular", font: UIFont.systemFont(ofSize: 17)),
-                CustomFont(name: "System-Italic", font: UIFont.italicSystemFont(ofSize: 17)),
-                CustomFont(name: "System-Bold", font: UIFont.boldSystemFont(ofSize: 17))]
     
     override func layoutSubviews() {
         super.layoutSubviews()
