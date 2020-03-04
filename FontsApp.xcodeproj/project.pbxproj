@@ -13,7 +13,45 @@
 		25DFC3C5240F7A01002F5D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DFC3C4240F7A01002F5D01 /* Assets.xcassets */; };
 		25DFC3C8240F7A01002F5D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DFC3C6240F7A01002F5D01 /* LaunchScreen.storyboard */; };
 		62743DF233102A731005D4E6 /* Pods_FontsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111A58F1A761ACEC91AFE6AE /* Pods_FontsApp.framework */; };
+		84551BFC240F9AE300435841 /* BaseViewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551BFB240F9AE300435841 /* BaseViewXib.swift */; };
+		84551BFF240F9B5000435841 /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551BFE240F9B5000435841 /* UIView+Extention.swift */; };
+		84551C09240FA79000435841 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84551C08240FA79000435841 /* KeyboardView.xib */; };
+		84551C0C240FA7E800435841 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551C0B240FA7E800435841 /* KeyboardView.swift */; };
+		84551C15240FA87300435841 /* KeyboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551C14240FA87300435841 /* KeyboardViewController.swift */; };
+		84551C19240FA87300435841 /* FontKeyboard.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 84551C12240FA87300435841 /* FontKeyboard.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		84551C1D240FA8DE00435841 /* KeyboardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84551C08240FA79000435841 /* KeyboardView.xib */; };
+		84551C1E240FA8E000435841 /* KeyboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551C0B240FA7E800435841 /* KeyboardView.swift */; };
+		84551C1F240FA9A500435841 /* BaseViewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551BFB240F9AE300435841 /* BaseViewXib.swift */; };
+		84551C20240FA9A800435841 /* UIView+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551BFE240F9B5000435841 /* UIView+Extention.swift */; };
+		84551C24240FEE6100435841 /* FontCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551C22240FEE6100435841 /* FontCollectionViewCell.swift */; };
+		84551C25240FEE6100435841 /* FontCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84551C23240FEE6100435841 /* FontCollectionViewCell.xib */; };
+		84551C26240FEE6A00435841 /* FontCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551C22240FEE6100435841 /* FontCollectionViewCell.swift */; };
+		84551C27240FEE7200435841 /* FontCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84551C23240FEE6100435841 /* FontCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84551C17240FA87300435841 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 25DFC3B2240F79FF002F5D01 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84551C11240FA87300435841;
+			remoteInfo = FontKeyboard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84551BEF240F988000435841 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				84551C19240FA87300435841 /* FontKeyboard.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		111A58F1A761ACEC91AFE6AE /* Pods_FontsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FontsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +64,15 @@
 		25DFC3C9240F7A01002F5D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4140E012971DD2994E91065B /* Pods-FontsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontsApp.release.xcconfig"; path = "Target Support Files/Pods-FontsApp/Pods-FontsApp.release.xcconfig"; sourceTree = "<group>"; };
 		4D63F2451C5930DBC60F5530 /* Pods-FontsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontsApp.debug.xcconfig"; path = "Target Support Files/Pods-FontsApp/Pods-FontsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		84551BFB240F9AE300435841 /* BaseViewXib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewXib.swift; sourceTree = "<group>"; };
+		84551BFE240F9B5000435841 /* UIView+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extention.swift"; sourceTree = "<group>"; };
+		84551C08240FA79000435841 /* KeyboardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeyboardView.xib; sourceTree = "<group>"; };
+		84551C0B240FA7E800435841 /* KeyboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardView.swift; sourceTree = "<group>"; };
+		84551C12240FA87300435841 /* FontKeyboard.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = FontKeyboard.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		84551C14240FA87300435841 /* KeyboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardViewController.swift; sourceTree = "<group>"; };
+		84551C16240FA87300435841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84551C22240FEE6100435841 /* FontCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCollectionViewCell.swift; sourceTree = "<group>"; };
+		84551C23240FEE6100435841 /* FontCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +81,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				62743DF233102A731005D4E6 /* Pods_FontsApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84551C0F240FA87300435841 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,7 +100,6 @@
 				4D63F2451C5930DBC60F5530 /* Pods-FontsApp.debug.xcconfig */,
 				4140E012971DD2994E91065B /* Pods-FontsApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -54,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				25DFC3BC240F79FF002F5D01 /* FontsApp */,
+				84551C13240FA87300435841 /* FontKeyboard */,
 				25DFC3BB240F79FF002F5D01 /* Products */,
 				09C56C034D6E2E4BF2123660 /* Pods */,
 				DB38EDE6F7C3A57A1F1617DC /* Frameworks */,
@@ -64,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				25DFC3BA240F79FF002F5D01 /* FontsApp.app */,
+				84551C12240FA87300435841 /* FontKeyboard.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -71,6 +126,8 @@
 		25DFC3BC240F79FF002F5D01 /* FontsApp */ = {
 			isa = PBXGroup;
 			children = (
+				84551BF9240F9AC500435841 /* Components */,
+				84551BF4240F9A3E00435841 /* Views */,
 				25DFC3BD240F79FF002F5D01 /* AppDelegate.swift */,
 				25DFC3BF240F79FF002F5D01 /* ViewController.swift */,
 				25DFC3C1240F79FF002F5D01 /* Main.storyboard */,
@@ -79,6 +136,59 @@
 				25DFC3C9240F7A01002F5D01 /* Info.plist */,
 			);
 			path = FontsApp;
+			sourceTree = "<group>";
+		};
+		84551BF4240F9A3E00435841 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84551C21240FEE4700435841 /* Cell */,
+				84551C0B240FA7E800435841 /* KeyboardView.swift */,
+				84551C08240FA79000435841 /* KeyboardView.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84551BF9240F9AC500435841 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				84551BFD240F9B3E00435841 /* Extension */,
+				84551BFA240F9ACD00435841 /* Base */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		84551BFA240F9ACD00435841 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				84551BFB240F9AE300435841 /* BaseViewXib.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		84551BFD240F9B3E00435841 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84551BFE240F9B5000435841 /* UIView+Extention.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		84551C13240FA87300435841 /* FontKeyboard */ = {
+			isa = PBXGroup;
+			children = (
+				84551C14240FA87300435841 /* KeyboardViewController.swift */,
+				84551C16240FA87300435841 /* Info.plist */,
+			);
+			path = FontKeyboard;
+			sourceTree = "<group>";
+		};
+		84551C21240FEE4700435841 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84551C22240FEE6100435841 /* FontCollectionViewCell.swift */,
+				84551C23240FEE6100435841 /* FontCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		DB38EDE6F7C3A57A1F1617DC /* Frameworks */ = {
@@ -100,15 +210,34 @@
 				25DFC3B6240F79FF002F5D01 /* Sources */,
 				25DFC3B7240F79FF002F5D01 /* Frameworks */,
 				25DFC3B8240F79FF002F5D01 /* Resources */,
+				84551BEF240F988000435841 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				84551C18240FA87300435841 /* PBXTargetDependency */,
 			);
 			name = FontsApp;
 			productName = FontsApp;
 			productReference = 25DFC3BA240F79FF002F5D01 /* FontsApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		84551C11240FA87300435841 /* FontKeyboard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84551C1A240FA87300435841 /* Build configuration list for PBXNativeTarget "FontKeyboard" */;
+			buildPhases = (
+				84551C0E240FA87300435841 /* Sources */,
+				84551C0F240FA87300435841 /* Frameworks */,
+				84551C10240FA87300435841 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FontKeyboard;
+			productName = FontKeyboard;
+			productReference = 84551C12240FA87300435841 /* FontKeyboard.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -116,12 +245,15 @@
 		25DFC3B2240F79FF002F5D01 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1120;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = SangNX;
 				TargetAttributes = {
 					25DFC3B9240F79FF002F5D01 = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					84551C11240FA87300435841 = {
+						CreatedOnToolsVersion = 11.2.1;
 					};
 				};
 			};
@@ -139,6 +271,7 @@
 			projectRoot = "";
 			targets = (
 				25DFC3B9240F79FF002F5D01 /* FontsApp */,
+				84551C11240FA87300435841 /* FontKeyboard */,
 			);
 		};
 /* End PBXProject section */
@@ -149,8 +282,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				25DFC3C8240F7A01002F5D01 /* LaunchScreen.storyboard in Resources */,
+				84551C09240FA79000435841 /* KeyboardView.xib in Resources */,
 				25DFC3C5240F7A01002F5D01 /* Assets.xcassets in Resources */,
 				25DFC3C3240F79FF002F5D01 /* Main.storyboard in Resources */,
+				84551C25240FEE6100435841 /* FontCollectionViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84551C10240FA87300435841 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84551C1D240FA8DE00435841 /* KeyboardView.xib in Resources */,
+				84551C27240FEE7200435841 /* FontCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,12 +330,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84551BFC240F9AE300435841 /* BaseViewXib.swift in Sources */,
+				84551BFF240F9B5000435841 /* UIView+Extention.swift in Sources */,
 				25DFC3C0240F79FF002F5D01 /* ViewController.swift in Sources */,
+				84551C0C240FA7E800435841 /* KeyboardView.swift in Sources */,
 				25DFC3BE240F79FF002F5D01 /* AppDelegate.swift in Sources */,
+				84551C24240FEE6100435841 /* FontCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84551C0E240FA87300435841 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84551C15240FA87300435841 /* KeyboardViewController.swift in Sources */,
+				84551C26240FEE6A00435841 /* FontCollectionViewCell.swift in Sources */,
+				84551C1E240FA8E000435841 /* KeyboardView.swift in Sources */,
+				84551C1F240FA9A500435841 /* BaseViewXib.swift in Sources */,
+				84551C20240FA9A800435841 /* UIView+Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84551C18240FA87300435841 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84551C11240FA87300435841 /* FontKeyboard */;
+			targetProxy = 84551C17240FA87300435841 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		25DFC3C1240F79FF002F5D01 /* Main.storyboard */ = {
@@ -333,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4D63F2451C5930DBC60F5530 /* Pods-FontsApp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FontsApp/Info.plist;
@@ -351,6 +520,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4140E012971DD2994E91065B /* Pods-FontsApp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = FontsApp/Info.plist;
@@ -360,6 +530,44 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = SangNX.FontsApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84551C1B240FA87300435841 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FontKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SangNX.FontsApp.FontKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84551C1C240FA87300435841 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = FontKeyboard/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = SangNX.FontsApp.FontKeyboard;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -382,6 +590,15 @@
 			buildConfigurations = (
 				25DFC3CD240F7A01002F5D01 /* Debug */,
 				25DFC3CE240F7A01002F5D01 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84551C1A240FA87300435841 /* Build configuration list for PBXNativeTarget "FontKeyboard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84551C1B240FA87300435841 /* Debug */,
+				84551C1C240FA87300435841 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
