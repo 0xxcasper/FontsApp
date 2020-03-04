@@ -12,9 +12,11 @@
 		25DFC3C3240F79FF002F5D01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DFC3C1240F79FF002F5D01 /* Main.storyboard */; };
 		25DFC3C5240F7A01002F5D01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25DFC3C4240F7A01002F5D01 /* Assets.xcassets */; };
 		25DFC3C8240F7A01002F5D01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25DFC3C6240F7A01002F5D01 /* LaunchScreen.storyboard */; };
+		62743DF233102A731005D4E6 /* Pods_FontsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111A58F1A761ACEC91AFE6AE /* Pods_FontsApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		111A58F1A761ACEC91AFE6AE /* Pods_FontsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FontsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DFC3BA240F79FF002F5D01 /* FontsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FontsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		25DFC3BD240F79FF002F5D01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25DFC3BF240F79FF002F5D01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		25DFC3C4240F7A01002F5D01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25DFC3C7240F7A01002F5D01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25DFC3C9240F7A01002F5D01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4140E012971DD2994E91065B /* Pods-FontsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontsApp.release.xcconfig"; path = "Target Support Files/Pods-FontsApp/Pods-FontsApp.release.xcconfig"; sourceTree = "<group>"; };
+		4D63F2451C5930DBC60F5530 /* Pods-FontsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FontsApp.debug.xcconfig"; path = "Target Support Files/Pods-FontsApp/Pods-FontsApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62743DF233102A731005D4E6 /* Pods_FontsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09C56C034D6E2E4BF2123660 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D63F2451C5930DBC60F5530 /* Pods-FontsApp.debug.xcconfig */,
+				4140E012971DD2994E91065B /* Pods-FontsApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		25DFC3B1240F79FF002F5D01 = {
 			isa = PBXGroup;
 			children = (
 				25DFC3BC240F79FF002F5D01 /* FontsApp */,
 				25DFC3BB240F79FF002F5D01 /* Products */,
+				09C56C034D6E2E4BF2123660 /* Pods */,
+				DB38EDE6F7C3A57A1F1617DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +81,14 @@
 			path = FontsApp;
 			sourceTree = "<group>";
 		};
+		DB38EDE6F7C3A57A1F1617DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				111A58F1A761ACEC91AFE6AE /* Pods_FontsApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +96,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 25DFC3CC240F7A01002F5D01 /* Build configuration list for PBXNativeTarget "FontsApp" */;
 			buildPhases = (
+				DCC690B9881C19F2898B8874 /* [CP] Check Pods Manifest.lock */,
 				25DFC3B6240F79FF002F5D01 /* Sources */,
 				25DFC3B7240F79FF002F5D01 /* Frameworks */,
 				25DFC3B8240F79FF002F5D01 /* Resources */,
@@ -129,6 +155,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DCC690B9881C19F2898B8874 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FontsApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		25DFC3B6240F79FF002F5D01 /* Sources */ = {
@@ -280,6 +331,7 @@
 		};
 		25DFC3CD240F7A01002F5D01 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D63F2451C5930DBC60F5530 /* Pods-FontsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +349,7 @@
 		};
 		25DFC3CE240F7A01002F5D01 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4140E012971DD2994E91065B /* Pods-FontsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
