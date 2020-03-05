@@ -9,49 +9,6 @@
 import Foundation
 import UIKit
 
-struct Font {
-    var row1: [String]
-    var row2: [String]
-    var row3: [String]
-    
-    var rowNum: [String]
-    var rowCharset1: [String]
-    var rowCharset2: [String]
-    var rowCharset3: [String]
-    var rowCharset4: [String]
-}
-
-struct CustomFont {
-    var name: String!
-    var fonts: Font!
-    var fontsCL: Font!
-    
-    init(name: String, font: Font, fontCL: Font) {
-        self.name = name
-        self.fonts = font
-        self.fontsCL = fontCL
-    }
-}
-
-var fonts =
-    [CustomFont(name: "System-Regular",
-                font: Font(row1: ["Ⓠ","Ⓦ","Ⓔ","Ⓡ","Ⓣ","Ⓨ","Ⓤ","Ⓘ","Ⓞ","Ⓟ"],
-                            row2: ["Ⓐ","Ⓢ","Ⓓ","Ⓕ","Ⓖ","Ⓗ","Ⓙ","Ⓚ","Ⓛ"],
-                            row3: ["Ⓩ","Ⓧ","Ⓒ","Ⓥ","Ⓑ","Ⓝ","Ⓜ"],
-                            rowNum: [①②③④⑤⑥⑦⑧⑨ 0],
-                            rowCharset1: [],
-                            rowCharset2: [],
-                            rowCharset3: [],
-                            rowCharset4: []),
-                fontCL: Font(row1: ["Ⓠ","Ⓦ","Ⓔ","Ⓡ","Ⓣ","Ⓨ","Ⓤ","Ⓘ","Ⓞ","Ⓟ"],
-                             row2: ["Ⓐ","Ⓢ","Ⓓ","Ⓕ","Ⓖ","Ⓗ","Ⓙ","Ⓚ","Ⓛ"],
-                             row3: ["Ⓩ","Ⓧ","Ⓒ","Ⓥ","Ⓑ","Ⓝ","Ⓜ"],
-                             rowNum: [],
-                             rowCharset1: [],
-                             rowCharset2: [],
-                             rowCharset3: [],
-                             rowCharset4: [])]
-
 protocol KeyboardViewDelegate: class {
     func nextKeyboardPressed()
     func keyPressed(string: String)
@@ -79,10 +36,23 @@ class KeyboardView: BaseViewXib {
     
     weak var delegate:KeyboardViewDelegate!
     
-    private var capsLockOn = true
+    private var capsLockOn = false
+    private var currentIndex = 0
+
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        guard let font = fonts[currentIndex].fonts else { return }
+        changeFontKeyboards(containerView: row1, row: font.row1)
+        changeFontKeyboards(containerView: row2, row: font.row2)
+        changeFontKeyboards(containerView: row3, row: font.row3)
+
+        changeFontKeyboards(containerView: charSetNum, row: font.rowNum)
+        
         collectionView.register(UINib(nibName: "FontCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         collectionView.showsHorizontalScrollIndicator = false
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -99,24 +69,29 @@ class KeyboardView: BaseViewXib {
     @IBAction func capsLockPressed(button: UIButton) {
         if button.titleLabel!.text == "CL" {
             capsLockOn = !capsLockOn
-            
-            changeCaps(containerView: row1)
-            changeCaps(containerView: row2)
-            changeCaps(containerView: row3)
+            if capsLockOn {
+                guard let fontCL = fonts[currentIndex].fontsCL else { return }
+                changeFontKeyboards(containerView: row1, row: fontCL.row1)
+                changeFontKeyboards(containerView: row2, row: fontCL.row2)
+                changeFontKeyboards(containerView: row3, row: fontCL.row3)
+            } else {
+                guard let font = fonts[currentIndex].fonts else { return }
+                changeFontKeyboards(containerView: row1, row: font.row1)
+                changeFontKeyboards(containerView: row2, row: font.row2)
+                changeFontKeyboards(containerView: row3, row: font.row3)
+            }
         } else if button.titleLabel!.text == "#+=" {
             charSet1.isHidden = true
             charSetNum.isHidden = true
-            
             charSet3.isHidden = false
             charSet4.isHidden = false
-             button.setTitle("123", for: .normal)
+            button.setTitle("123", for: .normal)
         } else if button.titleLabel!.text == "123" {
             charSet1.isHidden = false
             charSetNum.isHidden = false
-            
             charSet3.isHidden = true
             charSet4.isHidden = true
-             button.setTitle("#+=", for: .normal)
+            button.setTitle("#+=", for: .normal)
         }
     }
     
@@ -166,10 +141,10 @@ class KeyboardView: BaseViewXib {
         }
     }
     
-    private func changeFontKeyboards(containerView: UIView, font: UIFont) {
-        for view in containerView.subviews {
-            if let button = view as? UIButton, let titleLbl = button.titleLabel {
-                titleLbl.font = font
+    private func changeFontKeyboards(containerView: UIView, row: [String]) {
+        for (index, view) in containerView.subviews.enumerated() {
+            if let button = view as? UIButton {
+                button.setTitle(row[index], for: .normal)
             }
         }
     }
@@ -207,25 +182,22 @@ extension KeyboardView: UICollectionViewDataSource, UICollectionViewDelegateFlow
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! FontCollectionViewCell
-        cell.lblFont.font = fonts[indexPath.row].font
         cell.lblFont.text = fonts[indexPath.row].name
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let font = fonts[indexPath.row].font else { return }
-        changeFontKeyboards(containerView: row1, font: font)
-        changeFontKeyboards(containerView: row2, font: font)
-        changeFontKeyboards(containerView: row3, font: font)
+        currentIndex = indexPath.row
+        guard let font = fonts[indexPath.row].fonts else { return }
+        changeFontKeyboards(containerView: row1, row: font.row1)
+        changeFontKeyboards(containerView: row2, row: font.row2)
+        changeFontKeyboards(containerView: row3, row: font.row3)
         
-        changeFontKeyboards(containerView: charSetNum, font: font)
-        changeFontKeyboards(containerView: charSet1, font: font)
-        changeFontKeyboards(containerView: charSet2, font: font)
-        changeFontKeyboards(containerView: charSet4, font: font)
+        changeFontKeyboards(containerView: charSetNum, row: font.rowNum)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 140, height: 35)
+        return CGSize(width: 180, height: 32)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

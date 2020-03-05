@@ -27,6 +27,8 @@
 		84551C25240FEE6100435841 /* FontCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84551C23240FEE6100435841 /* FontCollectionViewCell.xib */; };
 		84551C26240FEE6A00435841 /* FontCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551C22240FEE6100435841 /* FontCollectionViewCell.swift */; };
 		84551C27240FEE7200435841 /* FontCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84551C23240FEE6100435841 /* FontCollectionViewCell.xib */; };
+		84B0431D24109E31005F621C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0431C24109E31005F621C /* Constants.swift */; };
+		84B0431E24109E3A005F621C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0431C24109E31005F621C /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,7 @@
 		84551C16240FA87300435841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84551C22240FEE6100435841 /* FontCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCollectionViewCell.swift; sourceTree = "<group>"; };
 		84551C23240FEE6100435841 /* FontCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCollectionViewCell.xib; sourceTree = "<group>"; };
+		84B0431C24109E31005F621C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,7 @@
 		25DFC3BC240F79FF002F5D01 /* FontsApp */ = {
 			isa = PBXGroup;
 			children = (
+				84B0431B24109E1E005F621C /* Constant */,
 				84551BF9240F9AC500435841 /* Components */,
 				84551BF4240F9A3E00435841 /* Views */,
 				25DFC3BD240F79FF002F5D01 /* AppDelegate.swift */,
@@ -189,6 +193,14 @@
 				84551C23240FEE6100435841 /* FontCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		84B0431B24109E1E005F621C /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				84B0431C24109E31005F621C /* Constants.swift */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 		DB38EDE6F7C3A57A1F1617DC /* Frameworks */ = {
@@ -334,6 +346,7 @@
 				84551BFF240F9B5000435841 /* UIView+Extention.swift in Sources */,
 				25DFC3C0240F79FF002F5D01 /* ViewController.swift in Sources */,
 				84551C0C240FA7E800435841 /* KeyboardView.swift in Sources */,
+				84B0431D24109E31005F621C /* Constants.swift in Sources */,
 				25DFC3BE240F79FF002F5D01 /* AppDelegate.swift in Sources */,
 				84551C24240FEE6100435841 /* FontCollectionViewCell.swift in Sources */,
 			);
@@ -348,6 +361,7 @@
 				84551C1E240FA8E000435841 /* KeyboardView.swift in Sources */,
 				84551C1F240FA9A500435841 /* BaseViewXib.swift in Sources */,
 				84551C20240FA9A800435841 /* UIView+Extention.swift in Sources */,
+				84B0431E24109E3A005F621C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
