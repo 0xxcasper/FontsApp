@@ -12,9 +12,26 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
+    
+    
+    @IBAction func openSetting(_ sender: Any) {
+        UIApplication.openAppSettings()
+    }
+}
 
+extension UIApplication {
+    @discardableResult
+    static func openAppSettings() -> Bool {
+        guard
+            let settingsURL = URL(string: UIApplication.openSettingsURLString),
+            UIApplication.shared.canOpenURL(settingsURL)
+            else {
+                return false
+        }
 
+        UIApplication.shared.open(settingsURL)
+        return true
+    }
 }
 

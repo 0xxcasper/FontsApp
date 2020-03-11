@@ -36,12 +36,46 @@ class KeyboardView: BaseViewXib {
     
     weak var delegate:KeyboardViewDelegate!
     
+    //=> Char set 3
+    @IBOutlet weak var charSet3_1: UIButton!
+    @IBOutlet weak var charSet3_2: UIButton!
+    @IBOutlet weak var charSet3_3: UIButton!
+    @IBOutlet weak var charSet3_4: UIButton!
+    @IBOutlet weak var charSet3_5: UIButton!
+    @IBOutlet weak var charSet3_6: UIButton!
+    @IBOutlet weak var charSet3_7: UIButton!
+    @IBOutlet weak var charSet3_8: UIButton!
+    @IBOutlet weak var charSet3_9: UIButton!
+    @IBOutlet weak var charSet3_10: UIButton!
+    //=> Char num
+    @IBOutlet weak var charNum_1: UIButton!
+    @IBOutlet weak var charNum_2: UIButton!
+    @IBOutlet weak var charNum_3: UIButton!
+    @IBOutlet weak var charNum_4: UIButton!
+    @IBOutlet weak var charNum_5: UIButton!
+    @IBOutlet weak var charNum_6: UIButton!
+    @IBOutlet weak var charNum_7: UIButton!
+    @IBOutlet weak var charNum_8: UIButton!
+    @IBOutlet weak var charNum_9: UIButton!
+    @IBOutlet weak var charNum_0: UIButton!
+    //=> Char row 1
+    @IBOutlet weak var charRow1_1: UIButton!
+    @IBOutlet weak var charRow1_2: UIButton!
+    @IBOutlet weak var charRow1_3: UIButton!
+    @IBOutlet weak var charRow1_4: UIButton!
+    @IBOutlet weak var charRow1_5: UIButton!
+    @IBOutlet weak var charRow1_6: UIButton!
+    @IBOutlet weak var charRow1_7: UIButton!
+    @IBOutlet weak var charRow1_8: UIButton!
+    @IBOutlet weak var charRow1_9: UIButton!
+    @IBOutlet weak var charRow1_10: UIButton!
+
+    
     private var capsLockOn = false
     private var currentIndex = 0
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     override func layoutSubviews() {
@@ -60,6 +94,32 @@ class KeyboardView: BaseViewXib {
         }
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        let arr_CharRow1 = [
+            charRow1_1,
+            charRow1_2,
+            charRow1_3,
+            charRow1_4,
+            charRow1_5,
+            charRow1_6,
+            charRow1_7,
+            charRow1_8,
+            charRow1_9,
+            charRow1_10
+        ]
+        for item in arr_CharRow1 {
+            addShadowButton(item!)
+        }
+    }
+    
+    func addShadowButton(_ item: UIButton) {
+        item.backgroundColor = .white
+        item.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
+        item.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        item.layer.shadowOpacity = 1.0
+        item.layer.shadowRadius = 0.0
+        item.layer.masksToBounds = false
+        item.layer.cornerRadius = 4.0
     }
     
     @IBAction func nextKeyboardPressed(button: UIButton) {

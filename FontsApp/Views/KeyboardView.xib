@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardView" customModule="FontKeyboard" customModuleProvider="target">
             <connections>
                 <outlet property="btnCaplock" destination="dGp-ux-V6B" id="9pu-40-XQI"/>
+                <outlet property="charNum_0" destination="xAq-vT-QsL" id="Xqb-ET-Nij"/>
+                <outlet property="charNum_1" destination="loB-RS-sR9" id="QeP-2I-z5H"/>
+                <outlet property="charNum_2" destination="3ua-qc-w3f" id="CgR-Hs-SSy"/>
+                <outlet property="charNum_3" destination="zpS-Qh-Thw" id="hBq-IL-znA"/>
+                <outlet property="charNum_4" destination="lIt-of-ixJ" id="PhS-va-LEc"/>
+                <outlet property="charNum_5" destination="05Q-Aq-jsc" id="Sz2-vv-WXP"/>
+                <outlet property="charNum_6" destination="TEa-0b-f4V" id="fqP-7S-RBE"/>
+                <outlet property="charNum_7" destination="JTL-Ba-GXn" id="jF2-Lo-uCl"/>
+                <outlet property="charNum_8" destination="jig-lv-Zgm" id="A0W-vB-GK8"/>
+                <outlet property="charNum_9" destination="L5l-bN-XxG" id="c8M-RU-nub"/>
+                <outlet property="charRow1_1" destination="AjH-YH-wXA" id="AGW-tP-YCb"/>
+                <outlet property="charRow1_10" destination="k5A-Or-2Ql" id="CTu-Ed-CSh"/>
+                <outlet property="charRow1_2" destination="PFn-KL-Kn9" id="1R8-BU-Qzi"/>
+                <outlet property="charRow1_3" destination="pJj-dN-mLm" id="mf3-hB-WkE"/>
+                <outlet property="charRow1_4" destination="zIq-kI-FJw" id="mpT-qW-A5E"/>
+                <outlet property="charRow1_5" destination="BoM-zq-U3X" id="s4s-ku-WCw"/>
+                <outlet property="charRow1_6" destination="13a-QR-cTn" id="O8s-Il-N1U"/>
+                <outlet property="charRow1_7" destination="Fdg-Du-THI" id="v9Q-Nb-GbA"/>
+                <outlet property="charRow1_8" destination="hke-Gj-INP" id="1wF-Q5-DAo"/>
+                <outlet property="charRow1_9" destination="5iL-3i-ue2" id="l4e-GW-4TK"/>
                 <outlet property="charSet1" destination="X29-LH-dzh" id="ym2-Q5-Llp"/>
                 <outlet property="charSet2" destination="LaZ-qT-El5" id="bbT-TF-1o7"/>
                 <outlet property="charSet3" destination="P68-hI-aJO" id="bqm-ya-2Bh"/>
+                <outlet property="charSet3_1" destination="scq-SB-H1s" id="cFa-kO-gwV"/>
+                <outlet property="charSet3_10" destination="U9A-6X-kfK" id="05b-ZK-BoM"/>
+                <outlet property="charSet3_2" destination="XzR-fC-OCi" id="fs2-kc-fPN"/>
+                <outlet property="charSet3_3" destination="qCU-tL-M0D" id="IDA-FA-JMj"/>
+                <outlet property="charSet3_4" destination="8VB-3l-Enz" id="WAS-O2-86p"/>
+                <outlet property="charSet3_5" destination="ml1-B8-m2M" id="Yhz-i1-mns"/>
+                <outlet property="charSet3_6" destination="Be9-O7-Pma" id="e0Z-zb-oNE"/>
+                <outlet property="charSet3_7" destination="LUP-pQ-pq4" id="mac-2J-cgi"/>
+                <outlet property="charSet3_8" destination="VSe-Sv-Wei" id="0Yx-A4-C48"/>
+                <outlet property="charSet3_9" destination="cSo-5G-gB7" id="I0J-7Y-MbG"/>
                 <outlet property="charSet4" destination="lY1-zj-55e" id="mIm-XU-1Lz"/>
                 <outlet property="charSetNum" destination="hsM-5M-f5X" id="Msh-gh-Jlj"/>
                 <outlet property="collectionView" destination="3rE-R0-A0Q" id="Kje-2d-EbK"/>
@@ -60,7 +90,7 @@
                                         <action selector="keyPressedWithButton:" destination="-1" eventType="touchUpInside" id="lfT-KS-gC5"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzR-fC-OCi">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XzR-fC-OCi">
                                     <rect key="frame" x="32" y="0.0" width="27.333333333333329" height="40"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>

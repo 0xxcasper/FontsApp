@@ -402,5 +402,12 @@ extension UIView {
             self.layer.maskedCorners = cornerMask
         }
     }
+    
+    func shadowBottom() {
+        self.backgroundColor = .white
+        self.layer.shadowColor = UIColor.red.cgColor
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowRadius = 2
+        self.layer.shadowOffset = CGSize(width: 0, height: 2)
+    }
 }
-
