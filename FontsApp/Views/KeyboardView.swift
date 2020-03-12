@@ -20,6 +20,7 @@ protocol KeyboardViewDelegate: class {
 class KeyboardView: BaseViewXib {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnCaplock: UIButton!
+    @IBOutlet weak var btnSpace: UIButton!
     
     @IBOutlet weak var row1: UIView!
     @IBOutlet weak var row2: UIView!
@@ -35,41 +36,6 @@ class KeyboardView: BaseViewXib {
     @IBOutlet var heightAncho: NSLayoutConstraint!
     
     weak var delegate:KeyboardViewDelegate!
-    
-    //=> Char set 3
-    @IBOutlet weak var charSet3_1: UIButton!
-    @IBOutlet weak var charSet3_2: UIButton!
-    @IBOutlet weak var charSet3_3: UIButton!
-    @IBOutlet weak var charSet3_4: UIButton!
-    @IBOutlet weak var charSet3_5: UIButton!
-    @IBOutlet weak var charSet3_6: UIButton!
-    @IBOutlet weak var charSet3_7: UIButton!
-    @IBOutlet weak var charSet3_8: UIButton!
-    @IBOutlet weak var charSet3_9: UIButton!
-    @IBOutlet weak var charSet3_10: UIButton!
-    //=> Char num
-    @IBOutlet weak var charNum_1: UIButton!
-    @IBOutlet weak var charNum_2: UIButton!
-    @IBOutlet weak var charNum_3: UIButton!
-    @IBOutlet weak var charNum_4: UIButton!
-    @IBOutlet weak var charNum_5: UIButton!
-    @IBOutlet weak var charNum_6: UIButton!
-    @IBOutlet weak var charNum_7: UIButton!
-    @IBOutlet weak var charNum_8: UIButton!
-    @IBOutlet weak var charNum_9: UIButton!
-    @IBOutlet weak var charNum_0: UIButton!
-    //=> Char row 1
-    @IBOutlet weak var charRow1_1: UIButton!
-    @IBOutlet weak var charRow1_2: UIButton!
-    @IBOutlet weak var charRow1_3: UIButton!
-    @IBOutlet weak var charRow1_4: UIButton!
-    @IBOutlet weak var charRow1_5: UIButton!
-    @IBOutlet weak var charRow1_6: UIButton!
-    @IBOutlet weak var charRow1_7: UIButton!
-    @IBOutlet weak var charRow1_8: UIButton!
-    @IBOutlet weak var charRow1_9: UIButton!
-    @IBOutlet weak var charRow1_10: UIButton!
-
     
     private var capsLockOn = false
     private var currentIndex = 0
@@ -87,6 +53,19 @@ class KeyboardView: BaseViewXib {
 
         changeFontKeyboards(containerView: charSetNum, row: font.rowNum)
         
+        addShadow(containerView: row1)
+        addShadow(containerView: row2)
+        addShadow(containerView: row3)
+
+        addShadow(containerView: charSetNum)
+        addShadow(containerView: charSet1)
+        addShadow(containerView: charSet2)
+        addShadow(containerView: charSet3)
+        addShadow(containerView: charSet4)
+        btnSpace.addShadowButton()
+        
+        heightAncho.constant = Constant.IS_IPHONEX ? 44 : 41
+        
         collectionView.register(UINib(nibName: "FontCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
         collectionView.showsHorizontalScrollIndicator = false
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
@@ -94,33 +73,8 @@ class KeyboardView: BaseViewXib {
         }
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        let arr_CharRow1 = [
-            charRow1_1,
-            charRow1_2,
-            charRow1_3,
-            charRow1_4,
-            charRow1_5,
-            charRow1_6,
-            charRow1_7,
-            charRow1_8,
-            charRow1_9,
-            charRow1_10
-        ]
-        for item in arr_CharRow1 {
-            addShadowButton(item!)
-        }
     }
     
-    func addShadowButton(_ item: UIButton) {
-        item.backgroundColor = .white
-        item.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.25).cgColor
-        item.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
-        item.layer.shadowOpacity = 1.0
-        item.layer.shadowRadius = 0.0
-        item.layer.masksToBounds = false
-        item.layer.cornerRadius = 4.0
-    }
     
     @IBAction func nextKeyboardPressed(button: UIButton) {
         delegate.nextKeyboardPressed()
@@ -158,8 +112,7 @@ class KeyboardView: BaseViewXib {
     @IBAction func keyPressed(button: UIButton) {
         let string = button.titleLabel!.text
         delegate.keyPressed(string: string ?? "")
-        self.animationTouch(button: button)
-
+        button.animationTouch()
     }
     
     @IBAction func backSpacePressed(button: UIButton) {
@@ -167,6 +120,7 @@ class KeyboardView: BaseViewXib {
     }
     
     @IBAction func spacePressed(button: UIButton) {
+        button.animationTouch()
         delegate.spacePressed()
     }
     
@@ -209,6 +163,14 @@ class KeyboardView: BaseViewXib {
         }
     }
     
+    private func addShadow(containerView: UIView) {
+        for (_, view) in containerView.subviews.enumerated() {
+            if let button = view as? UIButton {
+                button.addShadowButton()
+            }
+        }
+    }
+    
     private func changeCaps(containerView: UIView) {
         for view in containerView.subviews {
             if let button = view as? UIButton {
@@ -222,15 +184,6 @@ class KeyboardView: BaseViewXib {
                 }
             }
         }
-    }
-    
-    private func animationTouch(button: UIButton) {
-        UIView.animate(withDuration: 0.1, animations: {
-            button.transform = CGAffineTransform(translationX: 0, y: -30)
-            button.transform = CGAffineTransform.init(scaleX: 1.4, y: 1.7)
-            }, completion: {(_) -> Void in
-                button.transform = .identity
-        })
     }
 }
 
