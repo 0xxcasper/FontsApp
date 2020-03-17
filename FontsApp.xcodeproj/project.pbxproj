@@ -27,6 +27,8 @@
 		84551C25240FEE6100435841 /* FontCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84551C23240FEE6100435841 /* FontCollectionViewCell.xib */; };
 		84551C26240FEE6A00435841 /* FontCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84551C22240FEE6100435841 /* FontCollectionViewCell.swift */; };
 		84551C27240FEE7200435841 /* FontCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84551C23240FEE6100435841 /* FontCollectionViewCell.xib */; };
+		8482298E24206928002D2C59 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482298D24206928002D2C59 /* UserDefault.swift */; };
+		8482298F24206A54002D2C59 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482298D24206928002D2C59 /* UserDefault.swift */; };
 		84B0431D24109E31005F621C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0431C24109E31005F621C /* Constants.swift */; };
 		84B0431E24109E3A005F621C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B0431C24109E31005F621C /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,7 @@
 		84551C16240FA87300435841 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84551C22240FEE6100435841 /* FontCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontCollectionViewCell.swift; sourceTree = "<group>"; };
 		84551C23240FEE6100435841 /* FontCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FontCollectionViewCell.xib; sourceTree = "<group>"; };
+		8482298D24206928002D2C59 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		84B0431C24109E31005F621C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,6 +158,7 @@
 		84551BF9240F9AC500435841 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8482298C24206905002D2C59 /* Helper */,
 				84551BFD240F9B3E00435841 /* Extension */,
 				84551BFA240F9ACD00435841 /* Base */,
 			);
@@ -193,6 +197,14 @@
 				84551C23240FEE6100435841 /* FontCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		8482298C24206905002D2C59 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8482298D24206928002D2C59 /* UserDefault.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		84B0431B24109E1E005F621C /* Constant */ = {
@@ -342,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8482298E24206928002D2C59 /* UserDefault.swift in Sources */,
 				84551BFC240F9AE300435841 /* BaseViewXib.swift in Sources */,
 				84551BFF240F9B5000435841 /* UIView+Extention.swift in Sources */,
 				25DFC3C0240F79FF002F5D01 /* ViewController.swift in Sources */,
@@ -357,6 +370,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84551C15240FA87300435841 /* KeyboardViewController.swift in Sources */,
+				8482298F24206A54002D2C59 /* UserDefault.swift in Sources */,
 				84551C26240FEE6A00435841 /* FontCollectionViewCell.swift in Sources */,
 				84551C1E240FA8E000435841 /* KeyboardView.swift in Sources */,
 				84551C1F240FA9A500435841 /* BaseViewXib.swift in Sources */,

@@ -20,6 +20,7 @@ protocol KeyboardViewDelegate: class {
 class KeyboardView: BaseViewXib {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnCaplock: UIButton!
+    @IBOutlet weak var btnDelete: UIButton!
     @IBOutlet weak var btnSpace: UIButton!
     
     @IBOutlet weak var row1: UIView!
@@ -35,6 +36,7 @@ class KeyboardView: BaseViewXib {
         
     @IBOutlet var heightAncho: NSLayoutConstraint!
     
+    @IBOutlet weak var rowAccestories: UIView!
     weak var delegate:KeyboardViewDelegate!
     
     private var capsLockOn = false
@@ -42,10 +44,14 @@ class KeyboardView: BaseViewXib {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
+        if let currentFont = UserDefault.shared.currentFont {
+            currentIndex = currentFont
+        }
         guard let font = fonts[currentIndex].fonts else { return }
         changeFontKeyboards(containerView: row1, row: font.row1)
         changeFontKeyboards(containerView: row2, row: font.row2)
@@ -62,6 +68,11 @@ class KeyboardView: BaseViewXib {
         addShadow(containerView: charSet2)
         addShadow(containerView: charSet3)
         addShadow(containerView: charSet4)
+        
+        addShadow(containerView: rowAccestories, UIColor.init(white: 0.85, alpha: 1))
+        
+        btnDelete.addShadowButton(UIColor.init(white: 0.85, alpha: 1))
+        btnCaplock.addShadowButton(UIColor.init(white: 0.85, alpha: 1))
         btnSpace.addShadowButton()
         
         heightAncho.constant = Constant.IS_IPHONEX ? 44 : 41
@@ -163,10 +174,10 @@ class KeyboardView: BaseViewXib {
         }
     }
     
-    private func addShadow(containerView: UIView) {
+    private func addShadow(containerView: UIView,_ backgroundColor: UIColor = .white) {
         for (_, view) in containerView.subviews.enumerated() {
             if let button = view as? UIButton {
-                button.addShadowButton()
+                button.addShadowButton(backgroundColor)
             }
         }
     }
@@ -196,11 +207,14 @@ extension KeyboardView: UICollectionViewDataSource, UICollectionViewDelegateFlow
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! FontCollectionViewCell
         cell.lblFont.text = fonts[indexPath.row].name
+        cell.backgroundColor = currentIndex == indexPath.row ? .white : .clear
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         currentIndex = indexPath.row
+        UserDefault.shared.currentFont = currentIndex
+        collectionView.reloadData()
         guard let font = fonts[indexPath.row].fonts else { return }
         changeFontKeyboards(containerView: row1, row: font.row1)
         changeFontKeyboards(containerView: row2, row: font.row2)
@@ -210,7 +224,7 @@ extension KeyboardView: UICollectionViewDataSource, UICollectionViewDelegateFlow
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 180, height: 32)
+        return CGSize(width: 180, height: 25)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
