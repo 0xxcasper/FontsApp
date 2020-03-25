@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "photo-1557682257-2f9c37a3a5f3.jpeg",
+      "filename" : "peripherals.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "photo-1557682257-2f9c37a3a5f3-1.jpeg",
+      "filename" : "peripherals-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "photo-1557682257-2f9c37a3a5f3-2.jpeg",
+      "filename" : "peripherals-2.png",
       "scale" : "3x"
     }
   ],
